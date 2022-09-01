@@ -10,7 +10,8 @@ let progressStartValue = 0;
 let progressEndValue = progressValue.value;
 let speed = 20;
 
-const counter = () => {
+const counter = () => { 
+  
     progressStartValue = 0;
     if (progressEndValue < 0 || progressEndValue > 100) {
       return false;
@@ -30,7 +31,8 @@ const counter = () => {
         clearInterval(progress);
       }
     }, speed);
-};
+  }
+
 counter();
 
 progressValue.addEventListener('change', changeValue);
@@ -54,7 +56,9 @@ function changeAnimate() {
   }
 }
 function changeHide(e) {
-  statusH = !statusH;
+  statusH = !statusH; 
+  statusA=false; 
+  circleProgress.style.animation = undefined;
   if (statusH) {
     progress.style.display = 'none';
     progressAnimate.disabled = true;
@@ -62,5 +66,6 @@ function changeHide(e) {
   } else {
     progress.style.display = 'block';
     progressAnimate.disabled = false;
+    
   }
 }
